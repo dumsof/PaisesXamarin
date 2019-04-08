@@ -30,6 +30,7 @@ namespace Paises
         {
             containerRegistry.RegisterForNavigation<NavigationPage>();
             containerRegistry.RegisterForNavigation<MainPage, MainPageViewModel>();
+            containerRegistry.RegisterForNavigation<LoginContentPage, LoginContentPageViewModel>();
         }
     }
 }

@@ -5,8 +5,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Services\Contract\" />
-    <Folder Include="Services\Implementation\" />
+    <ProjectReference Include="..\Paises.Common\Paises.Common.csproj" />
+    <ProjectReference Include="..\Paises.Infraestructure\Paises.Infraestructure.csproj" />
   </ItemGroup>
 
 </Project>
