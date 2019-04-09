@@ -125,6 +125,6 @@
     <value>30462a9d27c6451e82eab03dcc422ca9</value>
   </data>
   <data name="Url" xml:space="preserve">
-    <value>https://epmapimdes.azure-api.net/AlertasMiddleware</value>
+    <value>http://localhost:63146</value>
   </data>
 </root>

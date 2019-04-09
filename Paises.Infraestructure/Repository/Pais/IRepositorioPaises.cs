@@ -1,14 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Net.Http;
-using System.Text;
-
-namespace Paises.Infraestructure.Repository.Pais
+﻿namespace Paises.Infraestructure.Repository.Pais
 {
+    using System.Net.Http;
+    using System.Threading.Tasks;
+
     public interface IRepositorioPaises
     {
 
-        HttpResponseMessage ObtenerPaises(string token);
+       Task<HttpResponseMessage> ObtenerPaises(string token);
 
     }
 }

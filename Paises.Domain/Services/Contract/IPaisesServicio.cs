@@ -6,6 +6,6 @@
 
     public interface IPaisesServicio
     {
-        Task<List<Pais>> ObtenerPais(string token);
+        Task<RespuestaPais> ObtenerPais(string token);
     }
 }

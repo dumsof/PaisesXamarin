@@ -79,7 +79,7 @@ namespace Paises.Common.Config.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to https://epmapimdes.azure-api.net/AlertasMiddleware.
+        ///   Looks up a localized string similar to http://localhost:63146.
         /// </summary>
         internal static string Url {
             get {

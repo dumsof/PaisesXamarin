@@ -10,7 +10,7 @@ namespace Paises.Infraestructure.Repository.ServiceContract
     public interface IPaisApiServices
     {
         [Headers("Content-Type: application/json")]
-        [Get("/api/Alerta/VerificarUltimaAlertaGenerada")]
-        Task<HttpResponseMessage> ObtenerApiPaises([Header("Authorization")] string authorization);
+        [Get("/api/Pais/ObtenerPaises")]
+        Task<HttpResponseMessage> ObtenerPaises([Header("Authorization: Bearer")] string token);
     }
 }

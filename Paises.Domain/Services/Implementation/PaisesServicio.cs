@@ -2,8 +2,8 @@
 {
     using Paises.Common.Dto.EntityContract;
     using Paises.Domain.Services.Contract;
-    using Paises.Infraestructure.Repository.Pais;
-    using System.Collections.Generic;
+    using Paises.Infraestructure.Repository.Pais; 
+    using System.Net.Http;
     using System.Threading.Tasks;
 
     public class PaisesServicio : IPaisesServicio
@@ -14,14 +14,12 @@
         {
             this.repositorio = repositorio;
         }
-        public Task<List<Pais>> ObtenerPais(string token)
+        public async Task<RespuestaPais> ObtenerPais(string token)
         {
-            //HttpResponseMessage response = await this.repositorio.ObtenerPaises(token);
-            //var json = response.Content.ReadAsStringAsync().Result;
-            //var respuesta = null;// _encriptionServices.DeserializeEntity<ResponseVerifyLastGeneratedAlert>(json);
-            //return null; // respustaVerificarUltimaAlertaGenerada;
-
-            return null;
+            HttpResponseMessage response = await this.repositorio.ObtenerPaises(token);
+            var json = response.Content.ReadAsStringAsync().Result;
+            var respuesta = json.Deserialize<RespuestaPais>();           
+            return respuesta;
         }
 
         /*

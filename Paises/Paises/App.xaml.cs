@@ -4,6 +4,9 @@ using Paises.ViewModels;
 using Paises.Views;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using Paises.Domain.Services.Contract;
+using Paises.Domain.Services.Implementation;
+using Paises.Infraestructure.Repository.Pais;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace Paises
@@ -23,14 +26,18 @@ namespace Paises
         {
             InitializeComponent();
 
-            await NavigationService.NavigateAsync("NavigationPage/MainPage");
+            await NavigationService.NavigateAsync("NavigationPage/Login");
         }
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
             containerRegistry.RegisterForNavigation<NavigationPage>();
             containerRegistry.RegisterForNavigation<MainPage, MainPageViewModel>();
-            containerRegistry.RegisterForNavigation<LoginContentPage, LoginContentPageViewModel>();
+            containerRegistry.RegisterForNavigation<LoginContentPage, LoginContentPageViewModel>("Login");
+
+            //Inyeccion de servicios.
+            containerRegistry.RegisterSingleton<IRepositorioPaises, RepositorioPaises>();
+            containerRegistry.RegisterSingleton<IPaisesServicio, PaisesServicio>();
         }
     }
 }
