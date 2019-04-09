@@ -13,12 +13,12 @@ namespace Paises.Common.Config
         /// <summary>
         /// Variable que contiene la URL del api.
         /// </summary>
-        private static Uri _base_Url = new Uri(ConfigResources.Url);
+        private static Uri base_Url = new Uri(ConfigResources.Url);
 
         /// <summary>
         /// Variable con el SubscritionKey para consumir el api.
         /// </summary>
-        private static string _subscription_Key = ConfigResources.Key;
+        private static string subscription_Key = ConfigResources.Key;
 
         /// <summary>
         /// Variable que contiene el timeout.
@@ -27,8 +27,8 @@ namespace Paises.Common.Config
 
         private static HttpClient httpClienConfig = new HttpClient { BaseAddress = Base_Url, Timeout = TimeOut };
 
-        public static string Subscription_Key { get => _subscription_Key; set => _subscription_Key = value; }
-        public static Uri Base_Url { get => _base_Url; set => _base_Url = value; }
+        public static string Subscription_Key { get => subscription_Key; set => subscription_Key = value; }
+        public static Uri Base_Url { get => base_Url; set => base_Url = value; }
         public static TimeSpan TimeOut { get => _timeOut; set => _timeOut = value; }
         public static HttpClient HttpClienConfig { get => httpClienConfig; set => httpClienConfig = value; }
     }
