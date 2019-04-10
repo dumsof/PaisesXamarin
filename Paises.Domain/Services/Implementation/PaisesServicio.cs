@@ -2,7 +2,7 @@
 {
     using Paises.Common.Dto.EntityContract;
     using Paises.Domain.Services.Contract;
-    using Paises.Infraestructure.Repository.Pais; 
+    using Paises.Infraestructure.Repository.Pais;
     using System.Net.Http;
     using System.Threading.Tasks;
 
@@ -18,8 +18,8 @@
         {
             HttpResponseMessage response = await this.repositorio.ObtenerPaises(token);
             var json = response.Content.ReadAsStringAsync().Result;
-            var respuesta = json.Deserialize<RespuestaPais>();           
-            return respuesta;
+            var respuesta = json.Deserialize<RespuestaPais>();
+            return null;
         }
 
         /*

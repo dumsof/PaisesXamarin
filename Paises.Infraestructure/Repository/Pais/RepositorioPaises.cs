@@ -20,8 +20,12 @@
         public Task<HttpResponseMessage> ObtenerPaises(string token)
         {
             //se crea una interfaz IPaisApiServices, para definir el metodo o servicio externo que consumira refit.
-            var restService = RestService.For<IPaisApiServices>(GlobalConfig.HttpClienConfig);
-            var response = restService.ObtenerPaises(token);
+            //se agrega RefitSettings, esto con el fin de pasar el token para Athoritazion Beares, comprobado prueba concepto.
+            var restService = RestService.For<IPaisApiServices>("http://localhost:63146", new RefitSettings()
+            {
+                AuthorizationHeaderValueGetter = () => Task.FromResult(token)
+            });
+            var response = restService.ObtenerApiPaises(token);
             return response;
         }
 
