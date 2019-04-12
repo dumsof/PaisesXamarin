@@ -5,6 +5,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Refit" Version="4.6.58" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Paises.Common\Paises.Common.csproj" />
     <ProjectReference Include="..\Paises.Infraestructure\Paises.Infraestructure.csproj" />
   </ItemGroup>

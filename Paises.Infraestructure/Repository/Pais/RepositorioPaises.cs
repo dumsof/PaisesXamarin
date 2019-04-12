@@ -25,7 +25,7 @@
             {
                 AuthorizationHeaderValueGetter = () => Task.FromResult(token)
             });
-            var response = restService.ObtenerApiPaises(token);
+            var response = restService.ObtenerApiPaises();
             return response;
         }
 

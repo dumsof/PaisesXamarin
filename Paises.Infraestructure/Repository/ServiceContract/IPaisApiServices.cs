@@ -7,12 +7,13 @@ using System.Threading.Tasks;
 
 namespace Paises.Infraestructure.Repository.ServiceContract
 {
+   
     public interface IPaisApiServices
     {
         //[Headers("Content-Type: application/json")]
         //[Header("Autoritation: application/json")]
         [Headers("Authorization: Bearer")]
         [Get("/api/Pais/ObtenerPaises")]
-        Task<HttpResponseMessage> ObtenerApiPaises(string token);
+        Task<HttpResponseMessage> ObtenerApiPaises();
     }
 }
