@@ -7,6 +7,7 @@ using Xamarin.Forms.Xaml;
 using Paises.Domain.Services.Contract;
 using Paises.Domain.Services.Implementation;
 using Paises.Infraestructure.Repository.Pais;
+using Paises.Infraestructure.Repository.ServiceContract;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace Paises
@@ -38,6 +39,7 @@ namespace Paises
             //Inyeccion de servicios.
             containerRegistry.RegisterSingleton<IRepositorioPaises, RepositorioPaises>();
             containerRegistry.RegisterSingleton<IPaisesServicio, PaisesServicio>();
+            containerRegistry.RegisterSingleton<IApiService, ApiService>();
         }
     }
 }
